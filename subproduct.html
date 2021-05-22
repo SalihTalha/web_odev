@@ -420,11 +420,6 @@ fetch(link + "/get_subproducts_personal", requestOptions)
     
   }
   function degistir(){
-    location.reload();
-
-    console.log( document.getElementById('InputSubProductId'));
-    console.log( document.getElementById('InputProductId'));
-    console.log( document.getElementById('amount'));
     var raw = JSON.stringify({
           "subproduct_id": document.getElementById('InputSubProductId').value,
           "product_id": document.getElementById('InputProductId').value,
@@ -443,7 +438,10 @@ fetch(link + "/change_subproduct", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
-  }
+
+  location.reload();
+
+}
   function kapatmafonksiyon(){
     modal.style.display = "none";
   }
